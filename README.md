@@ -2,22 +2,6 @@
 
 This is my first Django backend project built while learning Django and backend web development.
 
-The project is a simple Todo web application where users can:
-- Register and login
-- Create personal todos
-- Edit tasks
-- Delete tasks
-- Mark tasks as completed/incomplete
-- View their profile and task statistics
-
-Each user can only access and manage their own todos.
-
----
-
-## Why I Built This Project
-
-I built this project to practice Django by creating a complete web application without following a tutorial line by line.
-
 The main goal of this project was to understand:
 - Django project structure
 - Apps and routing
@@ -43,15 +27,16 @@ The main goal of this project was to understand:
 
 ## Features
 
-- User Registration
-- User Login & Logout
-- Create Todo
-- Edit Todo
-- Delete Todo
-- Complete / Undo Task
-- User Profile Page
-- Template Inheritance
-- Simple Responsive UI
+The project is a simple Todo web application where users can:
+- Register, login and Logout
+- Create personal todos
+- Create tasks
+- Edit tasks
+- Delete tasks
+- Mark tasks as completed/incomplete
+- View their profile page and task statistics
+
+Each user can only access and manage their own todos.
 
 ---
 
