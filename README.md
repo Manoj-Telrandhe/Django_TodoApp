@@ -14,6 +14,9 @@ The main goal of this project was to understand:
 - Git and GitHub workflow
 
 ---
+https://github.com/user-attachments/assets/29067832-2c0f-4a34-a9e7-6c9ecb3840b6
+
+---
 
 ## Tech Stack
 
