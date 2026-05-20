@@ -1,0 +1,91 @@
+{% extends "tasks/base.html" %}
+
+{% block content %}
+
+<section class="todo-section">
+
+    <div class="todo-container">
+
+        <div class="todo-header">
+
+            <h1 class="todo-title">My Todos</h1>
+
+            <form method="POST" class="todo-form">
+
+                {% csrf_token %}
+
+                <input type="text" name="task_text" placeholder="Enter your todo" class="todo-input">
+
+                <button type="submit" class="add-btn">Add</button>
+
+            </form>
+
+        </div>
+
+        <div class="todo-list">
+
+            {% for task in tasks %}
+
+                <div class="todo-item">
+
+                    <div class="todo-left">
+
+                        <a href="{% url 'toggle_task' task.id %}" class="complete-btn">
+
+                            {% if task.completed %}
+
+                                <i class="fa-solid fa-circle-check"></i>
+
+                            {% else %}
+
+                                <i class="fa-regular fa-circle"></i>
+
+                            {% endif %}
+
+                        </a>
+
+                        {% if task.completed %}
+
+                            <p class="task-text completed-task">
+                                {{ task.task_text }}
+                            </p>
+
+                        {% else %}
+
+                            <p class="task-text">
+                                {{ task.task_text }}
+                            </p>
+
+                        {% endif %}
+
+                    </div>
+
+                    <div class="todo-actions">
+
+                        <a href="{% url 'edit_task' task.id %}" class="action-btn edit-btn">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+
+                        <a href="{% url 'delete_task' task.id %}" class="action-btn delete-btn">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            {% empty %}
+
+                <p class="empty-text">
+                    No todos yet.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock content %}

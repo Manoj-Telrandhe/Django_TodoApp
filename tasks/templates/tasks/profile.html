@@ -1,0 +1,54 @@
+{% extends "tasks/base.html" %}
+
+{% block content %}
+
+<section class="profile-section">
+
+    <div class="profile-card">
+
+        <h1 class="profile-title">
+            My Profile
+        </h1>
+
+        <div class="profile-info">
+
+            <div class="info-box">
+                <span class="info-label">Username</span>
+                <p class="info-text">
+                    {{ request.user.username }}
+                </p>
+            </div>
+
+            <div class="info-box">
+                <span class="info-label">Email</span>
+                <p class="info-text">
+                    {{ request.user.email }}
+                </p>
+            </div>
+
+        </div>
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+                <h2>{{ total_tasks }}</h2>
+                <p>Total Tasks</p>
+            </div>
+
+            <div class="stat-card">
+                <h2>{{ completed_tasks }}</h2>
+                <p>Completed</p>
+            </div>
+
+            <div class="stat-card">
+                <h2>{{ incomplete_tasks }}</h2>
+                <p>Incomplete</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock content %}

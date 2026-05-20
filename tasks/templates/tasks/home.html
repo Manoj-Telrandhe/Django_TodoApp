@@ -1,0 +1,36 @@
+{% extends "tasks/base.html" %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1 class="hero-title">
+            Organize Your Daily Tasks
+        </h1>
+
+        <p class="hero-text">
+            A clean and simple todo app to help you stay focused,
+            manage your daily work, and improve productivity.
+        </p>
+
+        {% if user.is_authenticated %}
+
+            <a class="hero-btn" href="{% url 'todos' %}">
+                Go to My Todos
+            </a>
+
+        {% else %}
+
+            <a class="hero-btn" href="{% url 'register' %}">
+                Get Started
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock content %}

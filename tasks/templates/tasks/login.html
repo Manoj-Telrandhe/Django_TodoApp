@@ -1,0 +1,39 @@
+{% extends "tasks/base.html" %}
+
+{% block content %}
+
+<section class="auth-section">
+
+    <div class="auth-card">
+
+        <h1 class="auth-title">Welcome Back</h1>
+
+        <p class="auth-subtitle">
+            Login to continue managing your tasks.
+        </p>
+
+        <form method="POST" class="auth-form">
+
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username">
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password">
+            </div>
+
+            <button class="auth-btn" type="submit">
+                Login
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock content %}
